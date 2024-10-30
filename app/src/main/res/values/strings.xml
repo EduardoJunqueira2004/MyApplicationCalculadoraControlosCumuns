@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Calculadora</string>
+    <string name="math_image_desc">Imagem ilustrativa de matemática</string>
+    <string name="first_number_hint">Primeiro número</string>
+    <string name="second_number_hint">Segundo número</string>
+    <string name="calculate">Calcular</string>
+    <string name="view_result_in_second_activity">Ver Resultado na Segunda Atividade</string>
+
+    <!-- String de formato para exibir o resultado -->
+    <string name="result_message">O resultado é: %1$s</string>
+</resources>
