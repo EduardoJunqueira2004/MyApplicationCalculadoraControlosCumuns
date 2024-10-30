@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        val nomeprodutoEditText = findViewById<EditText>(R.id.nomeproduto)
         val number1EditText = findViewById<EditText>(R.id.number1)
         val number2EditText = findViewById<EditText>(R.id.number2)
         val calculateButton = findViewById<Button>(R.id.calculateButton)
@@ -30,11 +30,11 @@ class MainActivity : AppCompatActivity() {
                 val number1 = number1Text.toDouble()
                 val number2 = number2Text.toDouble()
 
-                // Exemplo de operação de soma
-                result = number1 + number2
-                resultTextView.text = "Resultado: $result"
+                // Exemplo de operação de multiplicação
+                result = number1 * number2
+                resultTextView.text = "O valor total do produto "+nomeprodutoEditText.text.toString()+" assumindo um preço unitário de "+number1Text+"   e uma quantidade de "+number2Text+", é de: $result"
 
-                // Exibir o resultado em um Toast usando R.string.result_message
+                // Toast  result_message
                 val toastMessage = getString(R.string.result_message, result.toString())
                 Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show()
             } else {
@@ -45,11 +45,15 @@ class MainActivity : AppCompatActivity() {
         openSecondActivityButton.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
             intent.putExtra(PARAM_RESULT, result)
+            intent.putExtra(PARAM_NUMBER1, number1EditText.text.toString().toDouble())
+            intent.putExtra(PARAM_NUMBER2, number2EditText.text.toString().toDouble())
             startActivity(intent)
         }
     }
 
     companion object {
         const val PARAM_RESULT = "PARAM_RESULT"
+        const val PARAM_NUMBER1 = "PARAM_NUMBER1"
+        const val PARAM_NUMBER2 = "PARAM_NUMBER2"
     }
 }

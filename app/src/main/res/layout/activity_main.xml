@@ -1,55 +1,57 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_margin="10dp">
+    android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_background"
-        android:layout_gravity="center"/>
-
+    <EditText
+        android:id="@+id/nomeproduto"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:hint="nome do produto"
+        android:gravity="left"
+        android:inputType="text"/>
     <EditText
         android:id="@+id/number1"
         android:layout_width="match_parent"
-        android:layout_gravity="center"
-        android:layout_height="48dp"
-        android:hint="Primeiro número"
+        android:layout_height="100dp"
+        android:hint="preço"
         android:inputType="numberDecimal"
-        android:layout_margin="10dp"/>
-
+        android:gravity="center"/>
     <EditText
         android:id="@+id/number2"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:hint="Segundo número"
+        android:layout_height="100dp"
+        android:hint="quantidade"
         android:inputType="numberDecimal"
-        android:layout_margin="10dp"/>
+        android:gravity="right"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
     <Button
         android:id="@+id/calculateButton"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+       android:layout_weight="1"
+        android:layout_gravity="center_vertical"
         android:text="Calcular"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"/>
+        android:onClick="Calcular"></Button>
+
+
+    <Button
+        android:id="@+id/openSecondActivityButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:text="SecondActivity"
+        android:onClick="SecondActivity"></Button>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/result"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Resultado:"
-        android:textSize="18sp"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"/>
+        android:layout_height="wrap_content"></TextView>
 
-    <Button
-        android:id="@+id/openSecondActivityButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ver Resultado na Segunda Atividade"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"/>
 </LinearLayout>

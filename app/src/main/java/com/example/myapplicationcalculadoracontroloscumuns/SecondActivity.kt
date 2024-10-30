@@ -11,10 +11,12 @@ class SecondActivity : AppCompatActivity() {
 
         val resultTextView = findViewById<TextView>(R.id.resultInSecondActivity)
 
-        // Recupera o resultado passado pela MainActivity
+        // Recupera os valores passados pela MainActivity
         val result = intent.getDoubleExtra(MainActivity.PARAM_RESULT, 0.0)
+        val number1 = intent.getDoubleExtra(MainActivity.PARAM_NUMBER1, 0.0)
+        val number2 = intent.getDoubleExtra(MainActivity.PARAM_NUMBER2, 0.0)
 
-        // Define o texto do TextView com o resultado
-        resultTextView.text = "Resultado: $result"
+        // Define o texto do TextView com os detalhes
+        resultTextView.text = "Preço unitário: $number1\nQuantidade: $number2\nValor total: $result"
     }
-}
+    }
